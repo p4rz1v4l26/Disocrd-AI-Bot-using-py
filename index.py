@@ -7,12 +7,12 @@ import asyncio
 keys = open('apikeys', 'r').read().splitlines()
 
 
-api_keys = keys[2]
+api_keys = keys[1]
 
-owner_id = keys[3] 
+owner_id = keys[2] 
 
 
-server_id = keys[4]
+server_id = keys[3]
 
 async def simulate_typing(ctx):
     async with ctx.typing():
@@ -23,7 +23,7 @@ intents = discord.Intents.default()
 intents.typing = False
 intents.presences = False
 
-bot = commands.Bot(command_prefix=['>'], intents=intents)
+bot = commands.Bot(command_prefix=['?'], intents=intents)
 
 
 chat_histories = {}
@@ -49,7 +49,7 @@ async def on_message(message):
     if message.author.bot:  # ignore other bots
         return
 
-    if not message.content.startswith(('>')):
+    if not message.content.startswith(('?')):
         return
 
     await bot.process_commands(message) 
@@ -160,25 +160,25 @@ async def custom_help(ctx):
     embed = discord.Embed(
         color=discord.Color(0xFFFFFF),
         title='COMMANDS',
-        description=f'__**STATISTICAL:**__\n\n> **📊Number of servers:** {Number_of_Server}\n> **🟢Bot Ping:** {botPing}ms\n> \n\n__**COMMANDS:**__'
+        description=f'__**STATISTICAL:**__\n\n? **📊Number of servers:** {Number_of_Server}\n? **🟢Bot Ping:** {botPing}ms\n? \n\n__**COMMANDS:**__'
     )
 
     embed.add_field(
         name='▶️  Default prefix',
-        value='`>`',
+        value='`?`',
         inline=True
     )
     embed.add_field(
         name=':robot:  Chat AI',
-        value='`>`\n`Ex: >c Hello.`',
+        value='`?`\n`Ex: ?c Hello.`',
         inline=True
     )
 
     embed.set_thumbnail(url=bot.user.avatar_url_as(format='png', size=1024))
-    embed.set_image(url='Enter image link here')
+    embed.set_image(url='https://cdn.discordapp.com/attachments/1207020521938624523/1207759585268600873/logoo.png?ex=65e0d0c4&is=65ce5bc4&hm=9978b6fbf3f3631fbc8bf4b013642d81632830c64beeeedb6f9c33990b83aeca&')
 
     await ctx.reply(embed=embed)
 
 
 # Chạy bot
-bot.run(keys[1])
+bot.run(keys[0])
