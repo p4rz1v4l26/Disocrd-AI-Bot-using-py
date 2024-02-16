@@ -4,15 +4,14 @@ import openai
 import asyncio
 
 
-keys = open('apikeys', 'r').read().splitlines()
 
 
-api_keys = keys[1]
+api_keys = ['insert your api key here'] #replace text with api key
 
-owner_id = keys[2] 
+owner_id = 'insert your owner id' #remove '' also 
 
 
-server_id = keys[3]
+server_id = 'insert your server id' #ofc here too
 
 async def simulate_typing(ctx):
     async with ctx.typing():
@@ -165,20 +164,20 @@ async def custom_help(ctx):
 
     embed.add_field(
         name='▶️  Default prefix',
-        value='`?`',
+        value='`?c`',
         inline=True
     )
     embed.add_field(
         name=':robot:  Chat AI',
-        value='`?`\n`Ex: ?c Hello.`',
+        value='`?c`\n`Ex: ?c Hello.`',
         inline=True
     )
 
     embed.set_thumbnail(url=bot.user.avatar_url_as(format='png', size=1024))
-    embed.set_image(url='https://cdn.discordapp.com/attachments/1207020521938624523/1207759585268600873/logoo.png?ex=65e0d0c4&is=65ce5bc4&hm=9978b6fbf3f3631fbc8bf4b013642d81632830c64beeeedb6f9c33990b83aeca&')
+    embed.set_image(url='https://avatars.githubusercontent.com/u/129799371?s=96&v=4')
 
     await ctx.reply(embed=embed)
 
 
-# Chạy bot
-bot.run(keys[0])
+# Chạt bot
+bot.run('Replace with your bot token')# do not remove '' here XD just replace the text
