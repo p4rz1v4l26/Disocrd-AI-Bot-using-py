@@ -1,5 +1,5 @@
 # Discord AI Bot
-
+Hello There,<br>
 Welcome to the Discord AI Bot! This bot is created using Python, the OpenAI API, and Discord.py. It's designed to perform various AI-related tasks and enhance the experience within Discord servers.
 
 ## Features
