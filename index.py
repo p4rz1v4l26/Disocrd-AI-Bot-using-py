@@ -61,7 +61,8 @@ async def chat_with_bot(ctx, *, input_text):
 
     async with ctx.channel.typing():
 
-        prompt_prefix = """(Respond like a professional virtual assistant.)""" # we can change it according to our need 
+        prompt_prefix = """()""" # we can change it according to our need 
+        #I've some interesting prompts contact me if you want
         input_text_with_prefix = prompt_prefix + input_text
 
         user_id = ctx.author.id
